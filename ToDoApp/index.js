@@ -17,8 +17,11 @@ form.addEventListener("submit", (evt) => {
   });
 
   todo.create(data);
+
   todo.onConsoleLog();
+  
   evt.target.reset();
+  
   const tasks = todo.getTasks();
   listGroup.append(taskItem(tasks[tasks.length - 1]));
 });

@@ -7,10 +7,10 @@ const createItem = () => {
     return li;
   };
   
-  const createBlock = (clasName = "") => {
+  const createBlock = (className = "") => {
     const div = document.createElement("div");
-    if (clasName) {
-      div.setAttribute("class", clasName);
+    if (className) {
+      div.setAttribute("class", className);
     }
     return div;
   };
@@ -44,6 +44,7 @@ const createItem = () => {
   export const taskItem = ({ isCompleted = false, task = "", id = 0 }) => {
     const li = createItem();
     li.setAttribute('data-id', id);
+    
     const taskContainer = createBlock("d-flex align-items-center");
     const btnContainer = createBlock();
     const formCheck = createBlock("form-check");
@@ -55,12 +56,15 @@ const createItem = () => {
       class: "form-check-input",
       value: isCompleted ? "checked" : "",
     });
+
     editButton.textContent = "Редактировать";
     deleteButton.textContent = "Удалить";
+
     formCheck.append(checkbox);
     taskContainer.append(formCheck, paragraph);
     btnContainer.append(editButton, deleteButton);
     li.append(taskContainer, btnContainer);
+
     return li;
 
   };
