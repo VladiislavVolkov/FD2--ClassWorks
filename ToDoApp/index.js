@@ -9,7 +9,6 @@ const listGroup = document.querySelector(".list-group");
 form.addEventListener("submit", (evt) => {
   evt.preventDefault();
   const formData = new FormData(evt.target);
-  console.log(formData);
   const data = {};
 
   formData.forEach((value, key) => {
@@ -18,10 +17,11 @@ form.addEventListener("submit", (evt) => {
 
   todo.create(data);
 
+  // просто метод
   todo.onConsoleLog();
-  
+
   evt.target.reset();
-  
+
   const tasks = todo.getTasks();
   listGroup.append(taskItem(tasks[tasks.length - 1]));
 });
