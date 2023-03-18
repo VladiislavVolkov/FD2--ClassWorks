@@ -10,6 +10,11 @@ export class Todo {
         });
     }
 
+    // просто метод - для проверки. он не нужен, но просто написал
+    onConsoleLog(){
+        console.log(this.tasks, this.tasks.length)
+    }
+
     getTasks() {
         return this.tasks;
     }
